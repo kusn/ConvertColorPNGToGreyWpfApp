@@ -1,14 +1,10 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.InteropServices;
-using System.Windows.Media;
-//using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Image = System.Windows.Controls.Image;
 using PixelFormat = System.Drawing.Imaging.PixelFormat;
 
 namespace ConvertColorPNGToGreyWpfApp
@@ -63,43 +59,6 @@ namespace ConvertColorPNGToGreyWpfApp
         private void OnConvertImageCommandExecuted(object p)
         {
             MakeGray(_bmp);
-
-            //List<System.Windows.Media.Color> colors = new List<System.Windows.Media.Color>();
-            //colors.Add(System.Windows.Media.Colors.Red);
-            //colors.Add(System.Windows.Media.Colors.Blue);
-            //colors.Add(System.Windows.Media.Colors.Green);
-            //BitmapPalette myPalette = new BitmapPalette(colors);
-
-            //var myBitmapSource = BitmapFrame.Create(ColoBitmapImage);
-            //var myBitmapSourceFrame = (BitmapFrame)myBitmapSource;
-            //var sourceColorContext = new ColorContext(myBitmapSourceFrame.Format);
-            //var destColorContext = new ColorContext(PixelFormats.Gray16);
-            //var ccb = new ColorConvertedBitmap(myBitmapSource, sourceColorContext, destColorContext,
-            //    PixelFormats.Gray16);
-            //Image myImage = new Image();
-            //myImage.Source = ccb;
-            //GrayBitmapImage = myImage.Source as BitmapSource;
-
-            //int stride = (int)(ColoBitmapImage.PixelWidth * (ColoBitmapImage.Format.BitsPerPixel / 8));
-            //byte[] pixels = new byte[(int)ColoBitmapImage.PixelHeight * stride];
-
-            //ColoBitmapImage.CopyPixels(pixels, stride, 0);
-
-            //for (int i = 0; i < pixels.Length - 3; i += 3)
-            //{
-            //    byte averColor = 0;
-            //    int value = pixels[i] + pixels[i + 1] + pixels[i + 2];
-            //    averColor = (byte)(value / 3);
-
-            //    pixels[i] = averColor;
-            //    pixels[i + 1] = averColor;
-            //    pixels[i + 2] = averColor;
-            //}
-
-            //var newBitmap = BitmapSource.Create(ColoBitmapImage.PixelWidth, ColoBitmapImage.PixelHeight, 96, 96,
-            //    PixelFormats.BlackWhite, myPalette, pixels, stride);
-
-            //GrayBitmapImage = newBitmap;
         }
         private bool CanConvertImageCommandExecute(object parameter) => true;
 
